@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+
+{% block content %}
+<section id="contact" class="bg-gray-100 text-[#1e1b4b] mt-10 py-20">
+  <div class="container mx-auto px-6 md:px-12 lg:px-24">
+    <div class="text-center mb-8 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Get In Touch</h2>
+      <p class="text-[#1e1b4b] text-xl max-w-2xl mx-auto">
+        Have any questions or inquiries? Fill out the form below, and we'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Contact Form -->
+      <div class="bg-white p-6 border-2 border-yellow-300 rounded-lg">
+        <form method="post" class="space-y-6" id="contactForm">
+          {% csrf_token %}
+          <div class="grid md:grid-cols-2 text-sm font-medium gap-6">
+            <div class="form-group text-xl font-medium">
+              <label for="{{ form.name.id_for_label }}">Name <span class="text-red-500">*</span></label>
+              {{ form.name }}
+            </div>
+            <div class="form-group text-xl font-medium">
+              <label for="{{ form.email.id_for_label }}">Email <span class="text-red-500">*</span></label>
+              {{ form.email }}
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 text-sm font-medium gap-6">
+            <div class="form-group text-xl font-medium">
+              <label for="{{ form.phone.id_for_label }}">Phone <span class="text-red-500">*</span></label>
+              {{ form.phone }}
+              <small class="text-red-500 hidden" id="phoneError">⚠️ Invalid phone number! Please enter a valid number (10-15 digits, optional + at the start).</small>
+            </div>
+            <div class="form-group text-xl font-medium">
+              <label for="{{ form.subject.id_for_label }}">Subject <span class="text-red-500">*</span></label>
+              {{ form.subject }}
+            </div>
+          </div>
+          <div class="form-group text-xl font-medium">
+            <label for="{{ form.message.id_for_label }}">Message <span class="text-red-500">*</span></label>
+            {{ form.message }}
+          </div>
+          <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-400 transition-all p-6 text-2xl rounded-lg text-[#1e1b4b] font-bold shadow-lg">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Information Box -->
+      <div class="bg-white p-8 border-2 border-yellow-300 rounded-lg flex flex-col justify-center items-center text-center">
+        <h3 class="text-2xl text-[#1e1b4b] font-bold mb-6">Contact Us</h3>
+        <p class="text-lg text-[#1e1b4b] mb-4">V.R.S. College of Engineering & Technology</p>
+        <p class="text-lg text-[#1e1b4b] mb-4">(Reaccredited by NAAC and An ISO Recertified Institution)</p>
+        <p class="text-lg text-[#1e1b4b]mb-4">Arasur - 607 107, Villupuram District</p>
+        <p class="text-lg text-[#1e1b4b] mb-4">
+          Mobile: <a href="tel:+918870301652" class="text-blue-500 hover:text-blue-400">+91 1234301652</a>
+        </p>
+        <p class="text-lg text-black">
+          Email: <a href="#" class="text-blue-500 hover:text-blue-400">abc@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    {% comment %} <div class="hidden md:block mt-10">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.123123456789!2d79.12345678901234!3d11.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDA3JzI0LjQiTiA3OcKwMDcnNDEuMiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        class="rounded-lg shadow-lg"
+      ></iframe>
+    </div> {% endcomment %}
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const phoneInput = document.querySelector("input[name='phone']");
+    const phoneError = document.getElementById("phoneError");
+
+    form.addEventListener("submit", function (e) {
+        const phonePattern = /^\+?\d{10,15}$/;
+        if (!phonePattern.test(phoneInput.value)) {
+            e.preventDefault();
+            phoneError.classList.remove("hidden");
+        } else {
+            phoneError.classList.add("hidden");
+        }
+    });
+});
+</script>
+
+{% endblock content %}

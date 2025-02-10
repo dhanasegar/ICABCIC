@@ -1,0 +1,130 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference</title>
+
+    {% tailwind_css %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg"/>
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Scroll Event for Header -->
+    <script defer>
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <!-- Menu Toggle Script (Simplified) -->
+    <script defer>
+        
+        // Toggle menu visibility
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        
+        // Close menu when clicking on any link
+        mobileMenu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    
+      /* Change color for all links when scrolled */
+      .scrolled a {
+        color: #1e1b4b !important;
+      }
+    
+      /* Change color for links inside dropdowns when scrolled */
+      .scrolled .dropdown-menu a {
+        color: #1e1b4b !important;
+      }
+    
+      /* Ensure the links inside dropdowns are visible and have the correct color when scrolled */
+      .scrolled .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+   
+  <style>
+    /* Ensure the mobile menu is visible and properly styled */
+    #mobile-menu {
+        background-color: white; /* Set background color */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+        z-index: 50; /* Ensure it appears above other content */
+    }
+
+    /* Style links in the mobile menu */
+    #mobile-menu a {
+        color: black; /* Set text color */
+        padding: 8px 16px; /* Add padding for better spacing */
+    }
+
+    /* Style dropdown buttons in the mobile menu */
+    #mobile-menu button {
+        color: black; /* Set text color */
+        padding: 8px 16px; /* Add padding for better spacing */
+    }
+
+    /* Style dropdown menus in the mobile menu */
+    #mobile-menu .dropdown-menu {
+        background-color: white; /* Set background color */
+        border: 1px solid #e5e7eb; /* Add border for better visibility */
+    }
+  
+      /* Add scroll-margin-top to all sections */
+      section {
+        scroll-margin-top: 100px; /* Adjust this value based on the height of your fixed header */
+      }
+    
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+  
+</style>
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #fbbf24; /* Yellow-400 color */
+    }
+  </style>
+
+  </head>
+<body  class="transition-opacity duration-500 ease-in-out opacity-100">
+	{%include 'partials/nav.html'%}
+ 
+   
+    <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+	{%include 'partials/footer.html'%}
+	<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+</body>
+</html>

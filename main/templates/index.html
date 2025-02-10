@@ -1,0 +1,917 @@
+{% extends "base.html" %}
+
+  {% block content %}
+  {%load static%}
+
+
+<!-- Hero Section start-->
+<div class="container mx-auto px-4">
+
+  <!-- Mobile Layout (small screens) -->
+  <div class="flex flex-col gap-8 items-center relative z-10 sm:order-2 md:hidden">
+      <!-- Left side: Text content (h1 first) -->
+      <div class="text-[#1e1b4b] space-y-6 order-1 pt-2">
+          <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              International Conference on Multidisciplinary Research in Education and Technology
+          </h1>
+      </div>
+
+      <!-- Right side: Optional image (image second) -->
+      <div class="relative order-2 w-full">
+          <div class="absolute inset-0 bg-blue-600/20 rounded-[40px] transform rotate-6"></div>
+          <div class="relative overflow-hidden rounded-[40px]">
+              <img src="{% static 'image/speak.jpg' %}" alt="Conference speaker" class="w-full h-full object-cover" />
+          </div>
+      </div>
+
+      <!-- Left side: Text content (p tag last) -->
+      <div class="text-base text-[#1e1b4b] text-justify order-3">
+          <p class="text-base">
+              Welcome to the <strong>International Conference on Multidisciplinary Research in Education, Science, and Technology (ICMRST)</strong>.
+              Organized by <strong>ARSSS</strong> in collaboration with <strong>IRAJ</strong>, the conference will be held on <strong class="font-semibold">29th & 30th March 2025</strong> in <strong class="font-semibold">Chennai, India</strong>.
+              Join us for a vibrant exchange of ideas and insights at the forefront of <strong>multidisciplinary educational and scientific research</strong>.
+          <div class="flex justify-center  eading-9  mt-6">
+              <a href="{% url 'contact' %}" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white leading-10 font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 text-xl focus:ring-blue-500 focus:ring-offset-2">
+                  Contact Us
+              </a>
+          </div>
+          </p>
+      </div>
+
+      <div class="container mx-auto px-4 py-9">
+          <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </div>
+  </div>
+
+  <!-- Desktop / Tablet Layout (larger screens) -->
+  <div class="hidden md:flex md:flex-row gap-12 items-center relative leading-10 z-10 sm:order-2 pt-36 py-20">
+      <!-- Left side: Text content (h1 and p) -->
+      <div class="text-[#1e1b4b] space-y-6 md:w-2/3 lg:w-3/5">
+          <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold py-5  leading-relaxed md:leading-snug lg:leading-tight">
+              International Conference on Multidisciplinary Research in Education and Technology
+          </h1>
+
+          <p class="text-white-300 text-2xl  mb-5 leading-10 text-justify">
+              Welcome to the <strong>International Conference on Multidisciplinary Research in Education, Science, and Technology (ICMRST)</strong>.
+              Organized by <strong>ARSSS</strong> in collaboration with <strong>IRAJ</strong>, the conference will be held on <strong class="font-semibold">29th & 30th March 2025</strong> in <strong class="font-semibold">Chennai, India</strong>.
+              Join us for a vibrant exchange of ideas and insights at the forefront of <strong>multidisciplinary educational and scientific research</strong>.
+          </p>
+          <br>
+          <!-- Contact Us Button -->
+          <div class="flex justify-left eading-9  ">
+              <a href="{% url 'contact' %}" class="px-10 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white leading-10 font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 text-2xl focus:ring-blue-500 focus:ring-offset-2">
+                  Contact Us
+              </a>
+          </div>
+      </div>
+
+      <!-- Right side: Optional image -->
+      <div class="relative md:w-1/3 lg:w-2/5 mt-20">
+          <div class="absolute inset-0 bg-blue-600/20 rounded-[40px] transform rotate-6"></div>
+          <div class="relative overflow-hidden rounded-[40px]">
+              <img src="{% static 'image/speak.jpg' %}" alt="Conference speaker" class="w-full h-auto object-cover" />
+          </div>
+      </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-16">
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+  </div>
+</div>
+<!-- Hero Section End -->           
+  
+		<!--  about-section start  -->
+    <section id="about" class="bg-[#ffffff] text-[#1e1b4b]">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center text-center mb-16">
+          <!-- Responsive font sizes -->
+          <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-8 sm:leading-10 mb-6 sm:mb-8">
+            About the Conference
+          </h2>
+          <p class="text-[#1e1b4b] text-base sm:text-lg md:text-2xl md:leading-10 text-justify">
+            <strong>1st International Conference on Multidisciplinary Research in Education, Science, and Technology (ICMRST-2025)</strong>
+            was successfully organized on <strong class="font-semibold">December 29th & 30th, 2025</strong>, in <strong class="font-semibold">Goa</strong>.
+            The conference was held in collaboration with three renowned universities:
+            <strong class="font-semibold">Tunghai University, Swaminarayan University, and Vadodara Institute-Kotambi</strong>. ICMRST-2025
+            provided a platform for global scholars and researchers to exchange innovative research and discuss emerging trends in
+            <strong class="font-semibold">education, science, and technology</strong>. With over <strong class="font-semibold">12 reputed speakers</strong> and more than
+            <strong class="font-semibold">40 research papers</strong> presented across <strong class="font-semibold">4 technical sessions</strong>,
+            the conference highlighted the importance of <strong class="font-semibold">interdisciplinary collaboration</strong> and advancing research in various fields.
+          </p>
+    
+          <p class="text-[#1e1b4b] text-base sm:text-lg md:text-2xl md:leading-10 text-justify mt-4">
+            The conference aimed to foster collaboration between <strong class="font-semibold">educators, researchers, and practitioners</strong>
+            across diverse disciplines, encouraging meaningful dialogue and the sharing of groundbreaking ideas. Attendees had the opportunity to present their research,
+            gain insights from leading experts, and explore new strategies for addressing the challenges faced by the <strong class="font-semibold">education and technology sectors</strong>.
+            With its diverse range of topics and interactive sessions, ICMRST-2025 played a key role in shaping the future of <strong class="font-semibold">education, science, and technology research</strong>.
+          </p>
+        </div>
+    
+        <!-- Larger grid boxes for desktop -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="flex flex-col items-center bg-gray-800 p-6 sm:p-8 rounded-lg">
+            <div class="text-4xl sm:text-5xl">🎤</div>
+            <div class="text-3xl sm:text-4xl font-bold mt-4 text-gray-300">1200+</div>
+            <div class="text-gray-300 text-lg sm:text-xl">Renowned Speakers</div>
+          </div>
+          <div class="flex flex-col items-center bg-gray-800 p-6 sm:p-8 rounded-lg">
+            <div class="text-4xl sm:text-5xl text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="50" height="50">
+                <path d="M15 4V2H9v2H2v5.5c0 .8.7 1.5 1.5 1.5S5 10.3 5 9.5 4.3 8 3.5 8H3V6h18v2h-.5C19.3 8 18 9.3 18 10.5s1.3 2.5 2.5 2.5 1.5-.7 1.5-1.5V4h-7zM3.5 14C2.7 14 2 14.7 2 15.5V21h20v-5.5c0-.8-.7-1.5-1.5-1.5S19 16.3 19 17.5 19.7 19 20.5 19H21v2H3v-2h.5C4.7 19 6 17.7 6 16.5S4.7 14 3.5 14z"/>
+              </svg>
+            </div>
+            <div class="text-3xl sm:text-4xl font-bold mt-4 text-gray-300">50000+</div>
+            <div class="text-gray-300 text-lg sm:text-xl">Attendees</div>
+          </div>
+          <div class="flex flex-col items-center bg-gray-800 p-6 sm:p-8 rounded-lg">
+            <div class="text-4xl sm:text-5xl">🎙️</div>
+            <div class="text-3xl sm:text-4xl font-bold mt-4 text-gray-300">500+</div>
+            <div class="text-gray-300 text-lg sm:text-xl">Sessions & Workshops</div>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 py-16">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </div>
+    </section>
+    
+	  <!--  about-section start  -->
+
+
+    		<!--  scope-section start  -->
+        <section id="scope" class="bg-[#ffffff] text-[#1e1b4b]">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8">Scope Of Conference</h1>
+            </div>
+        
+            <div class="mt-16 flex flex-col md:flex-row items-center gap-12">
+              <!-- Image Section -->
+              <div class="relative w-full md:w-1/2">
+                <div class="absolute inset-0 bg-blue-600/20 rounded-[40px] transform rotate-6"></div>
+                <div class="relative overflow-hidden rounded-[40px] bg-white">
+                  <img src="{% static 'image/funny.jpg' %}" alt="Conference Audience" class="w-full h-full object-cover rounded-[40px]" />
+                </div>
+              </div>
+        
+              <!-- Text Section -->
+              <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <p class="text-black-300 text-justify text-base sm:text-2xl sm:leading-10 font-sans">
+                  Join us for <strong class="font-semibold">ICMREST-2025</strong>, the 
+                  <strong class="font-semibold">2nd International Conference on Multidisciplinary Research in Education, Science, and Technology</strong>, 
+                  organized by <strong class="font-semibold">ARSSS</strong> in collaboration with 
+                  <strong class="font-semibold">IRAJ International</strong> on 
+                  <strong class="font-semibold">March 29-30, 2025</strong>, in 
+                  <strong class="font-semibold">Chennai, India</strong>.
+                  <br><br>
+                  Building on the success of <strong class="font-semibold">ICMRSET-2024</strong>, this conference brings together 
+                  <strong class="font-semibold">scholars, researchers, and professionals</strong> to exchange ideas, explore innovative approaches, 
+                  and discuss the latest trends in <strong class="font-semibold">education, science, and technology</strong>.
+                  <br><br>
+                  Be part of this <strong class="font-semibold">transformative event</strong> that shapes the 
+                  <strong class="font-semibold">future of learning and research</strong> across diverse disciplines!
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Divider -->
+          <div class="container mx-auto px-4 py-16">
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+          </div>
+        </section>
+    
+	
+
+
+      <!--COMMITTEE-section start  -->
+      <section id="committee" class="py-1 bg-[#ffffff] text-[#1e1b4b]">
+        <div class="container mx-auto px-4">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+              <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-10 mb-8">Organizing Committee</h1>
+              <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans">
+                The <strong class="font-semibold">Organizing Committee</strong> is a group of dedicated individuals responsible for 
+                <strong class="font-semibold">planning</strong>, <strong class="font-semibold">coordinating</strong>, and 
+                <strong class="font-semibold">managing</strong> the event or project. They work together to ensure everything runs smoothly, from 
+                <strong class="font-semibold">logistics</strong> and <strong class="font-semibold">scheduling</strong> to <strong class="font-semibold">communication</strong> and 
+                <strong class="font-semibold">resources</strong>. The committee's goal is to make sure the event or project is <strong class="font-semibold">successful</strong> 
+                and meets its objectives, with each member contributing their <strong class="font-semibold">expertise</strong> and efforts.
+              </p>
+              
+              <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans mt-4">
+                In addition to overseeing day-to-day operations, the organizing committee also plays a vital role in ensuring the event’s 
+                <strong class="font-semibold">vision</strong> is realized. They manage both the <strong class="font-semibold">budget</strong> and
+                <strong class="font-semibold">funding</strong>, ensuring resources are allocated appropriately. Furthermore, they provide crucial
+                <strong class="font-semibold">guidance</strong> and support to all team members and stakeholders to ensure smooth execution of the event from start to finish.
+              </p>
+              
+              <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans mt-4">
+                The committee is typically made up of experts in various fields, from <strong class="font-semibold">event management</strong> and 
+                <strong class="font-semibold">marketing</strong> to <strong class="font-semibold">finance</strong> and <strong 
+                class="font-semibold">logistics</strong>. Their combined efforts guarantee that the event is not only well-executed but also memorable and impactful.
+              </p>
+            </div>
+      
+            <div class="grid md:grid-cols-3 gap-8">
+              <!-- Speaker 1 -->
+              <div class="text-center">
+                <div class="relative mb-4 group">
+                  <img src="{% static 'image/speak.jpg' %}" alt="{{ speaker.name }}" class="w-full rounded-lg transition-transform transform group-hover:scale-105">
+                  
+                  <!-- Social Links (Hidden by Default) -->
+                  <div class="absolute inset-0 flex items-center justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg">
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Facebook">
+                      <i class="lni lni-facebook-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Twitter">
+                      <i class="lni lni-twitter-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Instagram">
+                      <i class="lni lni-instagram-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="LinkedIn">
+                      <i class="lni lni-linkedin-original text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-1">{{ speaker.name }}</h3>
+                <p class="text-gray-400">{{ speaker.title }}</p>
+              </div>
+      
+              <!-- Speaker 2 -->
+              <div class="text-center">
+                <div class="relative mb-4 group">
+                  <img src="{% static 'image/speaker6.jpg' %}" alt="{{ speaker.name }}" class="w-full rounded-lg transition-transform transform group-hover:scale-105">
+                  
+                  <!-- Social Links (Hidden by Default) -->
+                  <div class="absolute inset-0 flex items-center justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg">
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Facebook">
+                      <i class="lni lni-facebook-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Twitter">
+                      <i class="lni lni-twitter-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Instagram">
+                      <i class="lni lni-instagram-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="LinkedIn">
+                      <i class="lni lni-linkedin-original text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-1">{{ speaker.name }}</h3>
+                <p class="text-gray-400">{{ speaker.title }}</p>
+              </div>
+      
+              <!-- Speaker 3 -->
+              <div class="text-center">
+                <div class="relative mb-4 group">
+                  <img src="{% static 'image/speak.jpg' %}" alt="{{ speaker.name }}" class="w-full rounded-lg transition-transform transform group-hover:scale-105">
+                  
+                  <!-- Social Links (Hidden by Default) -->
+                  <div class="absolute inset-0 flex items-center justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg">
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Facebook">
+                      <i class="lni lni-facebook-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Twitter">
+                      <i class="lni lni-twitter-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="Instagram">
+                      <i class="lni lni-instagram-filled text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors" aria-label="LinkedIn">
+                      <i class="lni lni-linkedin-original text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-1">{{ speaker.name }}</h3>
+                <p class="text-gray-400">{{ speaker.title }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mx-auto px-4 py-16">
+          <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+        </div>
+      </section>
+    <!--  COMMITTEE-section end  -->
+
+     <!-- ========================= EDITORIAL BOARD-section start ========================= -->
+
+     <section id="board" class="bg-[#ffffff] text-[#1e1b4b]">
+      <div class="container mx-auto px-4">
+        <div class="bg-[#ffffff] text-black py-3">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+              <h1 class="text-2xl md:text-3xl text-[#1e1b4b] lg:text-4xl font-bold leading-tight mb-8">Editorial Board</h1>
+              <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans">
+                The <strong class="font-semibold">Editorial Board</strong> is a group of <strong class="font-semibold">experts</strong> 
+                who guide and oversee the content of the publication. They help ensure that all articles meet <strong class="font-semibold">
+                  high standards</strong> and align with the goals of the publication. The board members bring their <strong class="font-semibold"
+                  >knowledge</strong> and <strong class="font-semibold">experience</strong> to ensure the content is <strong class="font-semibold">
+                    valuable, accurate, and relevant</strong> to the readers. They are responsible for <strong class="font-semibold">reviewing submissions
+                    </strong>, making recommendations, and ensuring that each article is <strong class="font-semibold">thoroughly vetted</strong> before publication. 
+                    Their <strong class="font-semibold">expertise</strong> ensures the publication maintains its <strong class="font-semibold">credibility</strong>
+                     and serves the academic and professional community effectively.
+              </p>
+              
+              <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans mt-4">
+                In addition to ensuring quality content, the <strong class="font-semibold">Editorial Board</strong> also works closely with authors to provide 
+                <strong class="font-semibold">constructive feedback</strong> and guide them in enhancing their work. The board is dedicated to maintaining the 
+                publication’s <strong class="font-semibold">integrity</strong> by upholding rigorous review processes and ensuring transparency in all editorial decisions.
+              </p>
+            </div>
+    
+            <div class="grid md:grid-cols-3 gap-8">
+              <!-- First Card -->
+              <div class="bg-[#363A5D] rounded-lg overflow-hidden">
+                <img src="{% static 'image/speak.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex justify-between text-sm text-gray-400 mb-3">
+                    <span>Posted by: David Smith</span>
+                    <span>29-12-2025</span>
+                  </div>
+                  <h3 class="text-lg text-white font-semibold mb-3">
+                    Creating New Business
+                  </h3>
+                  <a href="{{ home }}" class="text-blue-400 hover:text-blue-300">
+                    Read More
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Second Card -->
+              <div class="bg-[#363A5D] rounded-lg overflow-hidden">
+                <img src="{% static 'image/speaker6.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex justify-between text-sm text-gray-400 mb-3">
+                    <span>Posted by: Anne Doe</span>
+                    <span>28-12-2025</span>
+                  </div>
+                  <h3 class="text-lg text-white font-semibold mb-3">
+                    Creating New Business
+                  </h3>
+                  <a href="{{ post.url }}" class="text-blue-400 hover:text-blue-300">
+                    Read More
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Third Card -->
+              <div class="bg-[#363A5D] rounded-lg overflow-hidden">
+                <img src="{% static 'image/speaker5.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex justify-between text-sm text-gray-400 mb-3">
+                    <span>Posted by: John Doe</span>
+                    <span>27-12-2025</span>
+                  </div>
+                  <h3 class="text-lg text-white font-semibold mb-3">
+                    Creating New Business
+                  </h3>
+                  <a href="{{ post.url }}" class="text-blue-400 hover:text-blue-300">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Divider -->
+        <div class="container mx-auto px-4 py-16">
+          <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+        </div>
+      </div>
+    </section>
+      <!-- ========================= EDITORIAL BOARD-section end ========================= -->
+
+
+       <!-- ========================= Registration-section start ========================= -->
+       <section id="registration" class="bg-[#ffffff]">
+        <div class="container mx-auto px-8 md:px-16 lg:px-24">
+          <!-- Registration Information -->
+          <div class="text-center mb-8">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e1b4b] leading-tight">Registration Details</h1>
+            <br>
+            <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans">
+              You can pay the <strong class="font-semibold">registration fee</strong> only after your article is accepted. You can pay through <strong class="font-semibold">Online Transfer (NEFT/IMPS)</strong> or <strong class="font-semibold">Cash Deposit</strong>.
+              Once you make the payment, you need to send proof (like a screenshot, reference number, or counter slip) along with your <strong class="font-semibold">Paper ID</strong>.
+              At least one <strong class="font-semibold">author must register</strong> and attend the conference to present the paper, and the accepted <strong class="font-semibold">abstracts will be published</strong> in the <strong class="font-semibold">conference proceedings</strong> with an <strong class="font-semibold">ISBN</strong>.
+            </p>
+          </div>
+      
+          <!-- Grid Layout for Registration and Bank Details -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left Column: Registration Details -->
+            <div class="flex flex-col">
+              <div class="bg-white/10 backdrop-blur-md text-xl rounded-xl overflow-hidden shadow-2xl flex-1 flex flex-col">
+                <div class="bg-yellow-500 py-4 px-6">
+                  <h2 class="text-2xl font-bold text-center text-[#1e1b4b]">Register Details</h2>
+                </div>
+                <div class="divide-y divide-white/10 flex-1 flex flex-col">
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Registration Fee :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">Registration fee will be made only after the acceptance of your article.</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Payment Methods :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">Payment can be made through Online Transfer (NEFT / IMPS) or Cash Deposit.</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Payment Proof :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">After making payment, kindly send us the proof of the payment (Screenshot / Reference Number / Transaction ID or Counter Slip) along with your Paper ID & necessary details.</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Attendance :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">It is mandatory for at least one author of each accepted paper to register and attend the conference to present the paper.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Right Column: Bank Details -->
+            <div class="flex flex-col">
+              <div class="bg-white/10 backdrop-blur-md text-xl rounded-xl overflow-hidden shadow-2xl flex-1 flex flex-col">
+                <div class="bg-yellow-500 py-4 px-6">
+                  <h2 class="text-2xl font-bold text-center text-black">Bank Details</h2>
+                </div>
+                <div class="divide-y divide-white/10 flex-1 flex flex-col">
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Account Name :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">J.K. Jothi Kalpana Professor, Dept. of Computer Science & Engineering VRSCET, Arasur.</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Account Number :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">045100050302269</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">Branch :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">Villupuram</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">IFSC Code :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">TMBL0000045</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col md:flex-row p-4 gap-2 hover:bg-white/5 transition-colors">
+                    <div class="md:w-1/3">
+                      <span class="text-[#1e1b4b] font-medium">MICR :</span>
+                    </div>
+                    <div class="md:w-2/3">
+                      <span class="text-[#1e1b4b]">605060005</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Divider -->
+          <div class="container mx-auto px-8 md:px-16 lg:px-24 py-16">
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+          </div>
+        </div>
+      </section> 
+    <!-- ========================= Registration-section end ========================= -->
+
+
+    
+    <!-- ========================= CONFERENCE TRACKS-section start ========================= -->
+    <section id="tracks" class="bg-[#ffffff] container mx-auto px-8 md:px-16 lg:px-24">
+      <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      </div>
+    
+      <div class="text-center mb-12 mt-1">
+        <h1 class="text-2xl md:text-3xl text-[#1e1b4b] lg:text-4xl font-bold leading-tight">Conference Tracks</h1>
+        <br>
+        <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl sm:leading-10 font-sans">
+          <strong>Conference tracks</strong> are different themes or topics that organize presentations, discussions, and research papers. 
+          Each <strong>track</strong> focuses on a specific subject area, allowing participants to explore relevant <strong>advancements, challenges, and innovations</strong>. 
+          These tracks help attendees find sessions that match their <strong>interests and expertise</strong>, ensuring a well-structured and engaging <strong>conference experience</strong>.
+        </p>
+      </div>
+    
+      <!-- Ensuring the container width matches the <p> width -->
+      <div class="container mx-auto px-8 md:px-16 lg:px-24 py-4">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Engineering -->
+          <div class="group relative bg-slate-900 rounded-xl p-10 shadow-lg transition duration-300 hover:scale-105 flex flex-col h-full">
+            <div class="flex-grow">
+              <h2 class="text-2xl font-semibold text-blue-400 mb-4">Engineering</h2>
+              <p class="text-slate-400 text-lg">All Branches and subfields of Engineering</p>
+            </div>
+          </div>
+    
+          <!-- Science -->
+          <div class="group relative bg-slate-900 rounded-xl p-10 shadow-lg transition duration-300 hover:scale-105 flex flex-col h-full">
+            <div class="flex-grow">
+              <h2 class="text-2xl font-semibold text-purple-400 mb-4">Science</h2>
+              <p class="text-slate-400 text-lg">All fields of Science, Applied Science & Library Science</p>
+            </div>
+          </div>
+    
+          <!-- Humanities -->
+          <div class="group relative bg-slate-900 rounded-xl p-10 shadow-lg transition duration-300 hover:scale-105 flex flex-col h-full">
+            <div class="flex-grow">
+              <h2 class="text-2xl font-semibold text-pink-400 mb-4">Humanities</h2>
+              <p class="text-slate-400 text-lg">Exploring human culture and experience</p>
+            </div>
+          </div>
+    
+          <!-- Technology & Management -->
+          <div class="group relative bg-slate-900 rounded-xl p-10 shadow-lg transition duration-300 hover:scale-105 flex flex-col h-full">
+            <div class="flex-grow">
+              <h2 class="text-2xl font-semibold text-rose-400 mb-4">Technology & Management</h2>
+              <p class="text-slate-400 text-lg">Management, Commerce, Bio-Technology, Bio-informatics, etc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container mx-auto px-8 md:px-16 lg:px-24 py-16">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </div>
+    </section>
+    
+  
+    <!-- ========================= CONFERENCE TRACKS-section end ========================= -->
+
+
+          <!-- ========================= Journals-section start ========================= -->
+    <section id="journal" class=" bg-[#ffffff]">
+          {% comment %} <div class="min-h-screen bg-gradient-to-b from-black/70 via-black/50 to-black/70 backdrop-blur-sm"> {% endcomment %}
+        
+            <!-- Header Section -->
+            <div class="pt-1 pb-1 text-center px-4">
+              <div class="text-center mb-12 mt-1">
+                <h1 class="text-2xl md:text-3xl lg:text-4xl text-[#1e1b4b] font-bold leading-tight">Journal Publication</h1>
+            </div>
+    
+                <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl p-6 border border-yellow-600 animate-fade-in">
+                    <div class="flex items-center gap-3 text-black-400">
+                        <svg class="w-6 h-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-lg text-justify text-[#1e1b4b] leading-10 font-sans">
+                          The <strong>journal publication</strong> is dedicated to sharing <strong>high-quality research, insights, and advancements</strong> in various fields. 
+                          It provides a platform for <strong>scholars, researchers, and professionals</strong> to publish their work, ensuring <strong>rigorous review and accuracy</strong>. 
+                          
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Journals Section -->
+            <div class="max-w-4xl mx-auto px-4 pt-8 space-y-6">
+    
+                <!-- Journal 1 -->
+                <div class="group relative overflow-hidden rounded-xl bg-gradient-to-r bg-[#2a2d43] hover:bg-[#3dc2ff]
+                            transition-all duration-300 shadow-lg hover:shadow-orange-500/25 animate-fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    
+                    <div class="relative p-6 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <svg class="w-8 h-8 text-white/90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                            </svg>
+                            <h3 class="text-lg md:text-xl font-semibold text-white">International Journal of Research in Engineering Science (IJRES)</h3>
+                        </div>
+                        <svg class="w-6 h-6 text-white/70 group-hover:text-white transform group-hover:translate-x-1 transition-all" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+    
+                <!-- Journal 2 -->
+                <div class="group relative overflow-hidden rounded-xl bg-gradient-to-r bg-[#2a2d43] hover:bg-[#3dc2ff]
+                            transition-all duration-300 shadow-lg hover:shadow-orange-500/25 animate-fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    
+                    <div class="relative p-6 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <svg class="w-8 h-8 text-white/90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                            </svg>
+                            <h3 class="text-lg md:text-xl font-semibold text-white">Journal of Emerging Technologies (JET)</h3>
+                        </div>
+                        <svg class="w-6 h-6 text-white/70 group-hover:text-white transform group-hover:translate-x-1 transition-all" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+    
+                <!-- Journal 3 -->
+                <div class="group relative overflow-hidden rounded-xl bg-gradient-to-r bg-[#2a2d43] hover:bg-[#3dc2ff] 
+                            transition-all duration-300 shadow-lg hover:shadow-orange-500/25 animate-fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    
+                    <div class="relative p-6 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <svg class="w-8 h-8 text-white/90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                            </svg>
+                            <h3 class="text-lg md:text-xl font-semibold text-white">International Journal of Research and Analytical reviews (IJRAR)</h3>
+                        </div>
+                        <svg class="w-6 h-6 text-white/70 group-hover:text-white transform group-hover:translate-x-1 transition-all" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <!-- Footer Note -->
+            <div class="text-center mt-1 pb-1">
+                <p class="text-white/60 text-sm">
+                    For more information about the publication process, please contact the journal directly.
+                </p>
+            </div>
+    
+        </div>
+        <div class="container mx-auto px-4 py-16">
+          <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </div>
+    
+        <style>
+            @keyframes fade-in {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+                animation: fade-in 0.8s ease-out;
+            }
+        </style>
+    </section>
+         <!-- ========================= Journals-section end ========================= -->
+
+
+      <!-- =========================NEW PAPER SUBMISSION-section start ========================= -->
+      
+    {% comment %} <section section id="paper" class=" bg-[#ffffff] text-black w-full h-full">
+      </div>
+      <div class="text-center mb-12 mt-1">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">New Paper Submission</h1>
+        
+      </div>
+  
+      <div class="relative max-w-3xl mx-auto px-4 py-1">
+          <form method="post" enctype="multipart/form-data" class="space-y-6 blue-blur-sm bg-white/10 p-8 rounded-xl shadow-2xl">
+              {% csrf_token %}
+              
+              <div class="space-y-4">
+                  <div>
+                      <label for="title" class="block text-black text-sm font-medium mb-2">Enter Paper Title</label>
+                      <input type="text" id="title" name="title" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-black/50transition-all"
+                          placeholder="Enter the title of your paper">
+                  </div>
+  
+                  <div>
+                      <label for="authorName" class="block  text-black text-sm font-medium mb-2">Enter First Author Full Name</label>
+                      <input type="text" id="authorName" name="authorName" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-black/50 transition-all"
+                          placeholder="Enter your full name">
+                  </div>
+  
+                  <div>
+                      <label for="mobile" class="block text-black text-sm font-medium mb-2">Enter First Author Mobile Number</label>
+                      <input type="tel" id="mobile" name="mobile" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-red placeholder-black/50 transition-all"
+                          placeholder="Enter your mobile number">
+                  </div>
+  
+                  <div>
+                      <label for="email" class="block text-black text-sm font-medium mb-2">Enter First Author Email Address</label>
+                      <input type="email" id="email" name="email" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-black/50 transition-all"
+                          placeholder="Enter your email address">
+                  </div>
+  
+                  <div>
+                      <label for="institution" class="block text-black text-sm font-medium mb-2">Enter First Author Institution Name</label>
+                      <input type="text" id="institution" name="institution" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-black/50 transition-all"
+                          placeholder="Enter your institution name">
+                  </div>
+  
+                  <div>
+                      <label for="category" class="block text-black text-sm font-medium mb-2">Select First Author Category</label>
+                      <select id="category" name="category" required
+                          class="w-full px-4 py-2 bg-white/20 border border-black/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black transition-all">
+                          <option value="" class="bg-white-900">Select a category</option>
+                          <option value="academicians" class="bg-white-900">Academicians</option>
+                          <option value="researchers" class="bg-white-900">Researchers</option>
+                          <option value="students" class="bg-white-900">Students</option>
+                      </select>
+                  </div>
+  
+                  <div>
+                      <label class="block  text-black text-sm font-medium mb-2">Upload Paper</label>
+                      <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/30 border-dashed rounded-lg hover:border-blue-500 transition-colors">
+                          <div class="space-y-1 text-center">
+                              <svg class="mx-auto h-12 w-12 text-black/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0 0v-4m0 4h4m-4 0H8m12 2a4 4 0 00-8 0H4a4 4 0 100 8h16a4 4 0 000-8z"></path>
+                              </svg>
+                              <div class="flex text-sm text-black">
+                                  <label for="file-upload" class="relative cursor-pointer rounded-md font-medium text-blue-400 hover:text-blue-300 focus-within:outline-none">
+                                      <span>Upload a file</span>
+                                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                  </label>
+                                  <p class="pl-1">or drag and drop</p>
+                              </div>
+                              <p class="text-xs text-black/50">PDF, DOC up to 10MB</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <button type="submit"
+                  class="w-full px-4 py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all">
+                  Submit Paper
+              </button>
+          </form>
+        </div>
+       <div class="container mx-auto px-4 py-16">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      </div>
+    </section> {% endcomment %}
+
+      <!-- =========================NEW PAPER SUBMISSION-section end ========================= -->
+      <section id="key">
+        <div class="min-h-screen bg-[#ffffff] container max-w-7xl mx-auto px-4 py-1">
+          <!-- Hero Section with Background -->
+          <div class="text-center mb-1 mt-1">
+            <h1 class="text-4xl font-bold text-[#1e1b4b] mb-4">Key Dates</h1>
+            <br>
+            <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl font-sans p-3 sm:leading-10">
+              <span class="font-semibold">Key Dates</span> on a conference page refer to important deadlines and events that participants need to be aware of. 
+              This typically includes the <strong class="font-semibold">submission deadline</strong> for papers or abstracts, the <strong class="font-semibold">notification date</strong> when authors are 
+              informed of <strong class="font-semibold">paper acceptance</strong>, the <strong class="font-semibold">registration deadline</strong>, and the actual dates of the conference.
+            
+              These dates help participants stay organized and ensure they meet all necessary requirements in a timely manner.
+            </p>
+          </div>
+      
+          <!-- Schedule Tabs -->
+          <div class="max-w-7xl mx-auto px-4 py-1">
+            <div class="grid md:grid-cols-3 gap-4 mb-8">
+              <!-- Add your content here -->
+            </div>
+      
+            <!-- Schedule Content -->
+            <div class="space-y-8">
+              <!-- Day 1 Sessions -->
+              <div class="space-y-4">
+                <div class="p-6 rounded-lg bg-[#2a2d43] hover:bg-[#3dc2ff] transition duration-300">
+                  <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="flex-shrink-0">
+                      <img src="{% static 'image/ggg.jpg' %}" alt="Michel Smith" class="rounded-full w-20 h-20" />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Creating New Business</h3>
+                      <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-6 text-gray-300">
+                        <span class="font-medium">Michel Smith</span>
+                        <span class="text-sm">08:20 Am - 10:30Am</span>
+                      </div>
+                      <p class="text-gray-300">
+                        Tempor invidunt ut labore esdryt dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Day 2 Sessions -->
+              <div class="space-y-4">
+                <div class="p-6 rounded-lg bg-[#2a2d43] hover:bg-[#3dc2ff] transition duration-300">
+                  <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="flex-shrink-0">
+                      <img src="{% static 'image/speaker5.jpg' %}" alt="David Smith" class="rounded-full w-20 h-20" />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Creating New Business</h3>
+                      <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-3 text-gray-300">
+                        <span class="font-medium">David Smith</span>
+                        <span class="text-sm">08:20 Am - 10:30Am</span>
+                      </div>
+                      <p class="text-gray-300">
+                        Tempor invidunt ut labore esdryt dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Day 4 Sessions -->
+              <div class="space-y-4">
+                <div class="p-6 rounded-lg bg-[#2a2d43] hover:bg-[#3dc2ff] transition duration-300">
+                  <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="flex-shrink-0">
+                      <img src="{% static 'image/ggg.jpg' %}" alt="David Smith" class="rounded-full w-20 h-20" />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Creating New Business</h3>
+                      <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-3 text-gray-300">
+                        <span class="font-medium">Michel Smith</span>
+                        <span class="text-sm">08:20 Am - 10:30Am</span>
+                      </div>
+                      <p class="text-gray-300">
+                        Tempor invidunt ut labore esdryt dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Day 3 Sessions -->
+              <div class="space-y-4">
+                <div class="p-6 rounded-lg bg-[#2a2d43] hover:bg-[#3dc2ff] transition duration-300">
+                  <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="flex-shrink-0">
+                      <img src="{% static 'image/speaker6.jpg' %}" alt="John Doe" class="rounded-full w-20 h-20" />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Creating New Business</h3>
+                      <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-3 text-gray-300">
+                        <span class="font-medium">John Doe</span>
+                        <span class="text-sm">08:20 Am - 10:30Am</span>
+                      </div>
+                      <p class="text-gray-300">
+                        Tempor invidunt ut labore esdryt dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        <!-- Submit Your Paper Button -->
+        <div class="flex justify-center  mt-6 mb-6">
+          <a href="{% url 'paper' %}" class="px-10 py-5 bg-gradient-to-r text-2xl from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              Submit Your Paper
+          </a>
+        </div>
+
+        <!-- ========================= contact-section start ========================= -->
+		
+
+   
+    
+
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
+    <!-- ========================= scroll-top ========================= -->
+    {% comment %} <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a> {% endcomment %}
+    {% endblock content %}
+ <!-- Left: Image with Curves -->
+ <div class="relative w-full md:w-1/2">
+  <img src="{% static 'image/funny.jpg' %}" alt="Conference" class="w-full rounded-lg shadow-lg clip-wave">
+</div>

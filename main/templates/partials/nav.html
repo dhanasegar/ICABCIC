@@ -1,0 +1,277 @@
+{% load static tailwind_tags %}
+
+<style>
+  [x-cloak] { display: none; }
+</style>
+
+<header class="fixed top-0 w-full py-2 text-[20px] bg-[#1e1b4b] shadow-md z-50">
+  <div class="container mx-auto px-8">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex-shrink-0 ml-[-40px]">
+        <img src="{% static 'image/weblogo.png' %}" alt="Logo" class="h-[80px]" w-'auto'>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 items-center ml-auto" x-data="{ active: getActivePage(), openDropdown: '' }" x-init="openDropdown = ''">
+        <a href="{% url 'home' %}" @click="active = 'home'" :class="active === 'home' ? 'text-yellow-400' : 'text-white'" class="no-underline hover:text-yellow-400 transition-colors">Home</a>
+
+        <!-- About Us Dropdown -->
+        <div class="relative">
+          <button @click="openDropdown = openDropdown === 'about' ? '' : 'about'" :class="['flex items-center', active.startsWith('about') ? 'text-yellow-400' : 'text-white']">
+            About Us <span x-show="openDropdown !== 'about'" class="ml-2">▼</span><span x-show="openDropdown === 'about'" class="ml-2">▲</span>
+          </button>
+          <div x-show="openDropdown === 'about'" @click.away="openDropdown = ''" class="absolute bg-[#1e1b4b] mt-3 w-[225px] rounded-lg shadow-lg p-3" x-cloak>
+            <a href="{% url 'home' %}#about" @click="active = 'about'; openDropdown = ''" :class="active === 'about' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">About the Conference</a>
+            <a href="{% url 'home' %}#scope" @click="active = 'about-scope'; openDropdown = ''" :class="active === 'about-scope' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Scope of Conference</a>
+            <a href="{% url 'home' %}#committee" @click="active = 'about-committee'; openDropdown = ''" :class="active === 'about-committee' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Organizing Committee</a>
+            <a href="{% url 'home' %}#board" @click="active = 'about-board'; openDropdown = ''" :class="active === 'about-board' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Editorial Board</a>
+          </div>
+        </div>
+
+        <!-- Author's Desk Dropdown -->
+        <div class="relative">
+          <button @click="openDropdown = openDropdown === 'authors' ? '' : 'authors'" :class="['flex items-center', active.startsWith('authors') ? 'text-yellow-400' : 'text-white']">
+            Author's Desk <span x-show="openDropdown !== 'authors'" class="ml-2">▼</span><span x-show="openDropdown === 'authors'" class="ml-2">▲</span>
+          </button>
+          <div x-show="openDropdown === 'authors'" @click.away="openDropdown = ''" class="absolute bg-[#1e1b4b] mt-2 w-[210px] rounded-lg shadow-lg p-4" x-cloak>
+            <a href="{% url 'home' %}#registration" @click="active = 'authors-registration'; openDropdown = ''" :class="active === 'authors-registration' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Registration Details</a>
+            <a href="{% url 'home' %}#tracks" @click="active = 'authors-tracks'; openDropdown = ''" :class="active === 'authors-tracks' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Conference Tracks</a>
+            <a href="{% url 'home' %}#journal" @click="active = 'authors-journal'; openDropdown = ''" :class="active === 'authors-journal' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Journal Publication</a>
+            <a href="{% url 'home' %}#key" @click="active = 'authors-key'; openDropdown = ''" :class="active === 'authors-key' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Key Dates</a>
+          </div>
+        </div>
+        <a href="{% url 'paper' %}" @click="active = 'paper'" :class="active === 'paper' ? 'text-yellow-400' : 'text-white'" class="no-underline hover:text-yellow-400 transition-colors">New Paper Submission</a>
+        <a href="{% url 'contact' %}" @click="active = 'contact'" :class="active === 'contact' ? 'text-yellow-400' : 'text-white'" class="no-underline hover:text-yellow-400 transition-colors">Contact Us</a>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <style>
+        [x-cloak] { display: none; }
+      </style>
+      
+      <!-- Mobile Menu -->
+      <div x-data="{ mobileMenuOpen: false, openDropdown: '', active: getActivePage() }" x-init="mobileMenuOpen = false; openDropdown = ''" class="md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen">
+          <svg x-show="!mobileMenuOpen" class="h-10 w-10 text-white mr-[-20px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <svg x-show="mobileMenuOpen" class="h-6 w-6 text-white mr-[-20px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" class="absolute top-16 left-0 bg-[#1e1b4b] w-full shadow-lg p-4">
+          <a href="{% url 'home' %}" @click="active = 'home'; mobileMenuOpen = false" :class="active === 'home' ? 'text-yellow-400' : 'text-white'" class="block py-2 hover:text-yellow-400 transition-colors duration-300">Home</a>
+      
+          <!-- About Us Dropdown -->
+          <div>
+            <button @click="openDropdown = openDropdown === 'about' ? '' : 'about'" class="w-full text-left py-2 hover:text-yellow-400 transition-colors duration-300" :class="active.startsWith('about') ? 'text-yellow-400' : 'text-white'">
+              About Us <span x-show="openDropdown !== 'about'">▼</span><span x-show="openDropdown === 'about'">▲</span>
+            </button>
+            <div x-show="openDropdown === 'about'" class="pl-4" x-cloak>
+              <a href="{% url 'home' %}#about" @click="active = 'about'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'about' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">About the Conference</a>
+              <a href="{% url 'home' %}#scope" @click="active = 'about-scope'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'about-scope' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Scope of Conference</a>
+              <a href="{% url 'home' %}#committee" @click="active = 'about-committee'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'about-committee' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Organizing Committee</a>
+              <a href="{% url 'home' %}#board" @click="active = 'about-board'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'about-board' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Editorial Board</a>
+            </div>
+          </div>
+      
+          <!-- Author's Desk Dropdown -->
+          <div>
+            <button @click="openDropdown = openDropdown === 'authors' ? '' : 'authors'" class="w-full hover:text-yellow-400 transition-colors duration-300 text-left py-2" :class="active.startsWith('authors') ? 'text-yellow-400' : 'text-white'">
+              Author's Desk <span x-show="openDropdown !== 'authors'">▼</span><span x-show="openDropdown === 'authors'">▲</span>
+            </button>
+            <div x-show="openDropdown === 'authors'" class="pl-4" x-cloak>
+              <a href="{% url 'home' %}#registration" @click="active = 'authors-registration'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'authors-registration' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Registration Details</a>
+              <a href="{% url 'home' %}#tracks" @click="active = 'authors-tracks'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'authors-tracks' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Conference Tracks</a>
+              <a href="{% url 'home' %}#journal" @click="active = 'authors-journal'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'authors-journal' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Journal Publication</a>
+              <a href="{% url 'home' %}#key" @click="active = 'authors-key'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'authors-key' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Key Dates</a>
+            </div>
+          </div>
+      
+          <a href="{% url 'paper' %}" @click="active = 'paper'; mobileMenuOpen = false" :class="active === 'paper' ? 'text-yellow-400' : 'text-white'" class="block py-2 hover:text-yellow-400 transition-colors duration-300">New Paper Submission</a>
+          <a href="{% url 'contact' %}" @click="active = 'contact'; mobileMenuOpen = false" :class="active === 'contact' ? 'text-yellow-400' : 'text-white'" class="block py-2 hover:text-yellow-400 transition-colors duration-300">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Function to determine the active page based on the current URL
+  function getActivePage() {
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+
+    if (currentPath.includes("contact")) return "contact";
+    if (currentPath.includes("paper")) return "paper";
+    if (currentHash.includes("about")) return "about";
+    if (currentHash.includes("scope")) return "about-scope";
+    if (currentHash.includes("committee")) return "about-committee";
+    if (currentHash.includes("board")) return "about-board";
+
+    if (currentHash.includes("registration")) return "authors-registration";
+    if (currentHash.includes("tracks")) return "authors-tracks";
+    if (currentHash.includes("journal")) return "authors-journal";
+    if (currentHash.includes("key")) return "authors-key";
+
+    return "home"; // Default
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+    const mobileLinks = document.querySelectorAll(".md\\:hidden a");
+    const dropdownParents = document.querySelectorAll(".relative button");
+
+    // Function to set the active section
+    function setActiveSection() {
+      let scrollY = window.scrollY;
+      let foundActive = false;
+
+      // Reset all links to default state
+      navLinks.forEach((link) => {
+        link.classList.remove("text-yellow-400");
+        link.classList.add("text-white");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.classList.remove("text-yellow-400");
+        link.classList.add("text-white");
+      });
+
+      // Reset all dropdown parent links to default state
+      dropdownParents.forEach((parent) => {
+        parent.classList.remove("text-yellow-400");
+        parent.classList.add("text-white");
+      });
+
+      // Find the active section
+      sections.forEach((section) => {
+        let sectionTop = section.offsetTop - 200; // Adjust for sticky nav height
+        let sectionHeight = section.offsetHeight;
+        const sectionId = section.id;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          // Activate the corresponding link
+          navLinks.forEach((link) => {
+            if (link.getAttribute("href").includes(sectionId)) {
+              link.classList.remove("text-white");
+              link.classList.add("text-yellow-400");
+
+              // Activate the parent dropdown link if this is a child link
+              const parentLink = link.closest(".relative")?.querySelector("button");
+              if (parentLink) {
+                parentLink.classList.remove("text-white");
+                parentLink.classList.add("text-yellow-400");
+              }
+            }
+          });
+
+          mobileLinks.forEach((link) => {
+            if (link.getAttribute("href").includes(sectionId)) {
+              link.classList.remove("text-white");
+              link.classList.add("text-yellow-400");
+
+              // Activate the parent dropdown link if this is a child link
+              const parentLink = link.closest(".relative")?.querySelector("button");
+              if (parentLink) {
+                parentLink.classList.remove("text-white");
+                parentLink.classList.add("text-yellow-400");
+              }
+            }
+          });
+
+          foundActive = true;
+        }
+      });
+
+      // If no section is active, set the home link as active
+      if (!foundActive) {
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === "{% url 'home' %}") {
+            link.classList.remove("text-white");
+            link.classList.add("text-yellow-400");
+          }
+        });
+
+        mobileLinks.forEach((link) => {
+          if (link.getAttribute("href") === "{% url 'home' %}") {
+            link.classList.remove("text-white");
+            link.classList.add("text-yellow-400");
+          }
+        });
+      }
+    }
+
+    // Set initial active section on page load
+    setActiveSection();
+
+    // Update active section on scroll
+    window.addEventListener("scroll", setActiveSection);
+
+    // Add click event listeners to dropdown links
+    document.querySelectorAll("nav a, .md\\:hidden a").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+
+        // Check if the link is an internal anchor link (e.g., #about, #registration)
+        if (href.includes("#")) {
+          // Prevent default anchor behavior
+          e.preventDefault();
+
+          // Get the target section ID from the href attribute
+          const targetId = href.split("#")[1];
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            // If the target section exists on the current page, scroll to it
+            targetSection.scrollIntoView({ behavior: "smooth" });
+
+            // Wait for the scroll to finish, then trigger setActiveSection
+            const scrollHandler = () => {
+              if (window.scrollY === targetSection.offsetTop - 100) {
+                setActiveSection();
+                window.removeEventListener("scroll", scrollHandler);
+              }
+            };
+
+            window.addEventListener("scroll", scrollHandler);
+          } else {
+            // If the target section does not exist, redirect to the Home page with the target hash
+            window.location.href = "{% url 'home' %}#" + targetId;
+          }
+        } else {
+          // If the link is not an internal anchor link (e.g., Home, Paper, Contact),
+          // reset all dropdown parent links and set the clicked link as active
+          dropdownParents.forEach((parent) => {
+            parent.classList.remove("text-yellow-400");
+            parent.classList.add("text-white");
+          });
+
+          navLinks.forEach((navLink) => {
+            if (navLink === link) {
+              navLink.classList.remove("text-white");
+              navLink.classList.add("text-yellow-400");
+            } else {
+              navLink.classList.remove("text-yellow-400");
+              navLink.classList.add("text-white");
+            }
+          });
+
+          mobileLinks.forEach((mobileLink) => {
+            if (mobileLink === link) {
+              mobileLink.classList.remove("text-white");
+              mobileLink.classList.add("text-yellow-400");
+            } else {
+              mobileLink.classList.remove("text-yellow-400");
+              mobileLink.classList.add("text-white");
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
