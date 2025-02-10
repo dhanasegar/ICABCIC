@@ -44,7 +44,7 @@ def paper(request):
                 subject,
                 message,
                 settings.EMAIL_HOST_USER,
-                ['dhanasegarbit@gmail.com']
+                ['d@gmail.com']
             )
 
             # Attach file if uploaded
@@ -77,7 +77,7 @@ def contact(request):
         Message: {form.cleaned_data['message']}
         """
         from_email = settings.EMAIL_HOST_USER
-        recipient_list = ['dhanasegarbit@gmail.com']
+        recipient_list = ['t@gmail.com']
 
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
