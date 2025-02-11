@@ -17,19 +17,19 @@ def paper(request):
     if request.method == 'POST':
         form = PaperSubmissionForm(request.POST, request.FILES)
         if form.is_valid():
-            # Extract form data
+           
             title = form.cleaned_data['title']
-            author_name = form.cleaned_data['author_name']  # Extracting author name
+            author_name = form.cleaned_data['author_name'] 
             mobile = form.cleaned_data['mobile']
             email = form.cleaned_data['email']
             institution = form.cleaned_data['institution']
             category = form.cleaned_data['category']
             paper_file = request.FILES.get('paper_file')
 
-            # Email subject with user's name
+          
             subject = f'New Paper Submission By - {author_name}'  
 
-            # Email content
+          
             message = f"""
             Title: {title}
             Author: {author_name}
@@ -39,22 +39,22 @@ def paper(request):
             Category: {category}
             """
 
-            # Prepare email with attachment
+           
             email_msg = EmailMessage(
                 subject,
                 message,
                 settings.EMAIL_HOST_USER,
-                ['d@gmail.com']
+                ['it@gmail.com']
             )
 
-            # Attach file if uploaded
+          
             if paper_file:
                 email_msg.attach(paper_file.name, paper_file.read(), paper_file.content_type)
 
-            # Send the email
+           
             email_msg.send()
 
-            return redirect('paper_success')  # Redirect to a success page
+            return redirect('paper_success')  
 
     else:
         form = PaperSubmissionForm()
@@ -64,9 +64,8 @@ def paper(request):
 def contact(request):
     form = ContactForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
-        name = form.cleaned_data['name']  # Extract name for subject line
+        name = form.cleaned_data['name'] 
         
-        # Email subject including user's name
         subject = f'Contact Inquiry - {name}'
 
         message = f"""
@@ -77,11 +76,11 @@ def contact(request):
         Message: {form.cleaned_data['message']}
         """
         from_email = settings.EMAIL_HOST_USER
-        recipient_list = ['t@gmail.com']
+        recipient_list = ['it@gmail.com']
 
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
-        return redirect('contact_success')  # Redirect to success page after submission
+        return redirect('contact_success') 
 
     return render(request, "contact.html", {"form": form})
 

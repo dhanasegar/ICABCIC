@@ -1,12 +1,12 @@
 from django import forms
 import re
 
-# Validator for mobile numbers
+
 def validate_mobile(value):
     if not re.fullmatch(r'^\+?\d{10,15}$', value):
         raise forms.ValidationError("⚠️ Invalid mobile number! Enter 10-15 digits (optional + at the start).")
 
-# Validator for file uploads (only .pdf, .doc, .docx allowed)
+
 def validate_file_extension(value):
     valid_extensions = ('.pdf', '.doc', '.docx')
     if not value.name.lower().endswith(valid_extensions):
