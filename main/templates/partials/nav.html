@@ -63,7 +63,7 @@
       
         <!-- Mobile Menu Dropdown -->
         <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" class="absolute top-16 left-0 bg-[#1e1b4b] w-full shadow-lg p-4">
-          <a href="{% url 'home' %}" @click="active = 'home'; mobileMenuOpen = false" :class="active === 'home' ? 'text-yellow-400' : 'text-white'" class="block py-2 hover:text-yellow-400 transition-colors duration-300">Home</a>
+          <a href="{% url 'home' %}#" @click="active = 'home'; mobileMenuOpen = false" :class="active === 'home' ? 'text-yellow-400' : 'text-white'" class="block py-2 hover:text-yellow-400 transition-colors duration-300">Home</a>
       
           <!-- About Us Dropdown -->
           <div>
