@@ -16,6 +16,7 @@
       <div class="bg-white p-6 border-2 border-yellow-300 rounded-lg">
         <form method="post" class="space-y-6" id="contactForm">
           {% csrf_token %}
+        
           <div class="grid md:grid-cols-2 text-sm font-medium gap-6">
             <div class="form-group text-xl font-medium">
               <label for="{{ form.name.id_for_label }}">Name <span class="text-red-500">*</span></label>
@@ -41,6 +42,11 @@
             <label for="{{ form.message.id_for_label }}">Message <span class="text-red-500">*</span></label>
             {{ form.message }}
           </div>
+          {% if error_message %}
+          <div class="alert alert-danger">
+              {{ error_message }}
+          </div>
+      {% endif %}
           <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-400 transition-all p-6 text-2xl rounded-lg text-[#1e1b4b] font-bold shadow-lg">
             Send Message
           </button>
