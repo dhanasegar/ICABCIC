@@ -41,7 +41,7 @@ def paper(request):
                     subject_admin,
                     message_admin,
                     settings.EMAIL_HOST_USER,
-                    ['bit@gmail.com']
+                    ['dhanasegarbit@gmail.com']
                 )
 
                 if paper_file:
@@ -102,7 +102,7 @@ def contact(request):
             Message: {form.cleaned_data['message']}
             """
             from_email = settings.EMAIL_HOST_USER
-            recipient_list = ['bit@gmail.com']
+            recipient_list = ['dhanasegarbit@gmail.com']
 
             send_mail(subject_admin, message_admin, from_email, recipient_list, fail_silently=False)
 

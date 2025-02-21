@@ -34,12 +34,12 @@
               <small class="text-red-500 hidden" id="phoneError">⚠️ Invalid phone number! Please enter a valid number (10-15 digits, optional + at the start).</small>
             </div>
             <div class="form-group text-xl font-medium">
-              <label for="{{ form.subject.id_for_label }}">Subject <span class="text-red-500">*</span></label>
+              <label for="{{ form.subject.id_for_label }}">Subject </label>
               {{ form.subject }}
             </div>
           </div>
           <div class="form-group text-xl font-medium">
-            <label for="{{ form.message.id_for_label }}">Message <span class="text-red-500">*</span></label>
+            <label for="{{ form.message.id_for_label }}">Message</label>
             {{ form.message }}
           </div>
           {% if error_message %}
@@ -56,16 +56,23 @@
       <!-- Contact Information Box -->
       <div class="bg-white p-8 border-2 border-yellow-300 rounded-lg flex flex-col justify-center items-center text-center">
         <h3 class="text-2xl text-[#1e1b4b] font-bold mb-6">Contact Us</h3>
-        <p class="text-lg text-[#1e1b4b] mb-4">V.R.S. College of Engineering & Technology</p>
-        <p class="text-lg text-[#1e1b4b] mb-4">(Reaccredited by NAAC and An ISO Recertified Institution)</p>
-        <p class="text-lg text-[#1e1b4b]mb-4">Arasur - 607 107, Villupuram District</p>
+        <p class="text-lg text-[#1e1b4b] mb-4">International Conference on Emerging Trends in Science & Technology</p>
+        <p class="text-lg text-[#1e1b4b] mb-4">Organized by XYZ Institute of Technology</p>
+        <p class="text-lg text-[#1e1b4b] mb-4">Venue: ABC Auditorium, XYZ Campus, Some City, Country</p>
+        
         <p class="text-lg text-[#1e1b4b] mb-4">
-          Mobile: <a href="tel:+918870301652" class="text-blue-500 hover:text-blue-400">+91 1234301652</a>
+            Mobile: <a href="tel:+911234567890" class="text-blue-500 hover:text-blue-400">+91 12345 67890</a>
         </p>
-        <p class="text-lg text-black">
-          Email: <a href="#" class="text-blue-500 hover:text-blue-400">abc@gmail.com</a>
+        
+        <p class="text-lg text-[#1e1b4b] mb-4">
+            Email: <a href="mailto:conference@xyz.com" class="text-blue-500 hover:text-blue-400">conference@xyz.com</a>
         </p>
-      </div>
+    
+        <p class="text-lg text-[#1e1b4b] mb-4">
+            Website: <a href="https://www.xyzconference.com" class="text-blue-500 hover:text-blue-400">www.xyzconference.com</a>
+        </p>
+    </div>
+    
     </div>
 
     <!-- Map Section -->
