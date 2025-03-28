@@ -5,20 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Meta Title -->
-    <title>ICABCIC Conference 2025 | Innovate, Collaborate, Advance</title>
+    <!-- Dynamic Meta Tags -->
+    <title>{% block meta_title %}ICABCIC Conference 2025 - Innovate, Collaborate, Advance{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Join the ICABCIC Conference 2025 to explore innovative ideas, collaborate with industry leaders, and advance your knowledge in cutting-edge technologies.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}ICABCIC Conference, technology conference, innovation, collaboration, industry leaders, 2025 conference{% endblock %}">
 
-    <!-- Meta Description -->
-    <meta name="description" content="Join the ICABCIC Conference 2025 to explore innovative ideas, collaborate with industry leaders, and advance your knowledge in cutting-edge technologies.">
-
-    <!-- Meta Keywords -->
-    <meta name="keywords" content="ICABCIC Conference, technology conference, innovation, collaboration, industry leaders, 2025 conference">
-
-    <!-- Open Graph (OG) Meta Tags -->
-    <meta property="og:title" content="ICABCIC Conference 2025 | Innovate, Collaborate, Advance">
-    <meta property="og:description" content="Join the ICABCIC Conference 2025 to explore innovative ideas, collaborate with industry leaders, and advance your knowledge in cutting-edge technologies.">
-    <meta property="og:image" content="{% static 'image/logo 3.png' %}"> 
-    <meta property="og:url" content="https://icabcic.org/"> 
+    <!-- Dynamic Open Graph (OG) Meta Tags -->
+    <meta property="og:title" content="{% block og_title %}ICABCIC Conference 2025 | Innovate, Collaborate, Advance{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Join the ICABCIC Conference 2025 to explore innovative ideas, collaborate with industry leaders, and advance your knowledge in cutting-edge technologies.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}http://127.0.0.1:8000/static/image/logomin.png{% endblock %}"> 
+    <meta property="og:url" content="{% block og_url %}https://icabcic.org/{% block og_url_suffix %}{% endblock %}{% endblock %}"> 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ICABCIC Conference">
 
@@ -27,7 +23,7 @@
     <link href="{% static 'css/output.css' %}" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/logo 3.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'image/logomin.png' %}">
 
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
@@ -145,5 +141,144 @@
 
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+
+    <!-- Dynamic Meta Tag Updater for SPA Navigation -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Function to update meta tags based on current section
+        function updateMetaTags(section) {
+          const metaData = {
+            'home': {
+              title: 'ICABCIC Conference 2025 - Home',
+              description: 'Welcome to the ICABCIC Conference 2025 homepage. Join us to innovate, collaborate and advance.',
+              keywords: 'ICABCIC, conference, home, welcome',
+              ogTitle: 'ICABCIC Conference 2025 | Home',
+              ogDescription: 'Welcome to the ICABCIC Conference 2025 homepage',
+              ogImage: 'http://127.0.0.1:8000/static/image/home-og.jpg',
+              ogUrl: 'https://icabcic.org/'
+            },
+            '#about': {
+              title: 'About ICABCIC Conference 2025',
+              description: 'Learn about the ICABCIC Conference 2025, our mission, and our goals.',
+              keywords: 'ICABCIC, about, conference, mission',
+              ogTitle: 'About ICABCIC Conference 2025',
+              ogDescription: 'Learn about our conference mission and goals',
+              ogImage: 'http://127.0.0.1:8000/static/image/about-og.jpg',
+              ogUrl: 'https://icabcic.org/#about'
+            },
+            'scope': {
+              title: 'Conference Scope | ICABCIC 2025',
+              description: 'Discover the scope and topics covered at ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, scope, topics, coverage',
+              ogTitle: 'Conference Scope | ICABCIC 2025',
+              ogDescription: 'Discover the scope of our conference',
+              ogImage: 'http://127.0.0.1:8000/static/image/scope-og.jpg',
+              ogUrl: 'https://icabcic.org/#scope'
+            },
+            'registration': {
+              title: 'Registration | ICABCIC Conference 2025',
+              description: 'Register for the ICABCIC Conference 2025 and secure your spot.',
+              keywords: 'ICABCIC, register, registration, sign up',
+              ogTitle: 'Registration | ICABCIC Conference 2025',
+              ogDescription: 'Register for our conference',
+              ogImage: 'http://127.0.0.1:8000/static/image/register-og.jpg',
+              ogUrl: 'https://icabcic.org/#registration'
+            },
+            'committee': {
+              title: 'Organizing Committee | ICABCIC 2025',
+              description: 'Meet the organizing committee behind ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, committee, organizers, team',
+              ogTitle: 'Organizing Committee | ICABCIC 2025',
+              ogDescription: 'Meet our organizing committee',
+              ogImage: 'http://127.0.0.1:8000/static/image/committee-og.jpg',
+              ogUrl: 'https://icabcic.org/#committee'
+            },
+            'board': {
+              title: 'Advisory Board | ICABCIC 2025',
+              description: 'Learn about the advisory board members of ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, board, advisors, members',
+              ogTitle: 'Advisory Board | ICABCIC 2025',
+              ogDescription: 'Meet our advisory board members',
+              ogImage: 'http://127.0.0.1:8000/static/image/board-og.jpg',
+              ogUrl: 'https://icabcic.org/#board'
+            },
+            'tracks': {
+              title: 'Conference Tracks | ICABCIC 2025',
+              description: 'Explore the different tracks and sessions at ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, tracks, sessions, topics',
+              ogTitle: 'Conference Tracks | ICABCIC 2025',
+              ogDescription: 'Explore our conference tracks',
+              ogImage: 'http://127.0.0.1:8000/static/image/tracks-og.jpg',
+              ogUrl: 'https://icabcic.org/#tracks'
+            },
+            'key': {
+              title: 'Keynote Speakers | ICABCIC 2025',
+              description: 'Meet the keynote speakers at ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, keynote, speakers, presenters',
+              ogTitle: 'Keynote Speakers | ICABCIC 2025',
+              ogDescription: 'Meet our keynote speakers',
+              ogImage: 'http://127.0.0.1:8000/static/image/keynote-og.jpg',
+              ogUrl: 'https://icabcic.org/#key'
+            },
+            'paper': {
+              title: 'Paper Submission | ICABCIC 2025',
+              description: 'Submit your research paper for ICABCIC Conference 2025.',
+              keywords: 'ICABCIC, paper, submission, research',
+              ogTitle: 'Paper Submission | ICABCIC 2025',
+              ogDescription: 'Submit your research paper',
+              ogImage: 'http://127.0.0.1:8000/static/image/paper-og.jpg',
+              ogUrl: 'https://icabcic.org/paper'
+            },
+            'contact': {
+              title: 'Contact Us | ICABCIC 2025',
+              description: 'Get in touch with the ICABCIC Conference 2025 organizers.',
+              keywords: 'ICABCIC, contact, email, reach out',
+              ogTitle: 'Contact Us | ICABCIC 2025',
+              ogDescription: 'Get in touch with us',
+              ogImage: 'http://127.0.0.1:8000/static/image/contact-og.jpg',
+              ogUrl: 'https://icabcic.org/contact'
+            }
+          };
+
+          const data = metaData[section] || metaData['home'];
+          
+          // Update meta tags
+          document.title = data.title;
+          document.querySelector('meta[name="description"]').setAttribute('content', data.description);
+          document.querySelector('meta[name="keywords"]').setAttribute('content', data.keywords);
+          document.querySelector('meta[property="og:title"]').setAttribute('content', data.ogTitle);
+          document.querySelector('meta[property="og:description"]').setAttribute('content', data.ogDescription);
+          document.querySelector('meta[property="og:image"]').setAttribute('content', data.ogImage);
+          document.querySelector('meta[property="og:url"]').setAttribute('content', data.ogUrl);
+          
+          // Update history for SEO (pushState)
+          history.pushState(null, data.title, data.ogUrl);
+        }
+
+        // Function to detect current section from URL
+        function getCurrentSection() {
+          const path = window.location.pathname;
+          const hash = window.location.hash.substring(1); // Remove the #
+          
+          if (path.includes('paper')) return 'paper';
+          if (path.includes('contact')) return 'contact';
+          if (hash) return hash;
+          return 'home';
+        }
+
+        // Initial meta tag update
+        updateMetaTags(getCurrentSection());
+
+        // Listen for hash changes (section navigation)
+        window.addEventListener('hashchange', function() {
+          updateMetaTags(getCurrentSection());
+        });
+
+        // Listen for popstate (back/forward navigation)
+        window.addEventListener('popstate', function() {
+          updateMetaTags(getCurrentSection());
+        });
+      });
+    </script>
   </body>
 </html>

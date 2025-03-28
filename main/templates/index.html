@@ -83,7 +83,7 @@
 </div>
 <!-- Hero Section End -->           
   
-		<!--  about-section start  -->
+<!--  about-section start  -->
     <section id="about" class="bg-[#ffffff] text-[#1e1b4b]">
       <div class="container mx-auto px-4">
         <div class="flex flex-col items-center text-center mb-16">
@@ -112,7 +112,78 @@
           
           
         </div>
-    
+         <script>
+
+              document.addEventListener('DOMContentLoaded', function() {
+                // Configuration for the counter animation
+                const counters = [
+                    { 
+                        element: document.querySelector('.grid > div:nth-child(1) .text-3xl'), 
+                        finalValue: 1200, 
+                        duration: 2000 
+                    },
+                    { 
+                        element: document.querySelector('.grid > div:nth-child(2) .text-3xl'), 
+                        finalValue: 50000, 
+                        duration: 2000 
+                    },
+                    { 
+                        element: document.querySelector('.grid > div:nth-child(3) .text-3xl'), 
+                        finalValue: 500, 
+                        duration: 2000 
+                    }
+                ];
+            
+                // Function to animate the counter
+                function animateCounter(counter) {
+                    const { element, finalValue, duration } = counter;
+                    const startTime = performance.now();
+                    const endTime = startTime + duration;
+                    const originalText = element.textContent;
+                    const hasPlusSign = originalText.includes('+');
+                    
+                    function updateCounter(currentTime) {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+                        const currentValue = Math.floor(progress * finalValue);
+                        
+                        // Format number with commas and add plus sign if it was there originally
+                        element.textContent = currentValue.toLocaleString() + (hasPlusSign ? '+' : '');
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            // Ensure final value is exact
+                            element.textContent = finalValue.toLocaleString() + (hasPlusSign ? '+' : '');
+                        }
+                    }
+                    
+                    // Start with 0
+                    element.textContent = '0' + (hasPlusSign ? '+' : '');
+                    requestAnimationFrame(updateCounter);
+                }
+            
+                // Intersection Observer to trigger animation when section is visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            counters.forEach(counter => {
+                                if (counter.element) {
+                                    animateCounter(counter);
+                                }
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+            
+                // Observe the container
+                const container = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-3');
+                if (container) {
+                    observer.observe(container);
+                }
+            });
+         </script>
         <!-- Larger grid boxes for desktop -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div class="flex flex-col items-center bg-[#1e1b4b] p-6 sm:p-8 rounded-lg">
@@ -205,10 +276,10 @@
         </div>
     </section>
     
-	  <!--  about-section start  -->
+<!--  about-section End  -->
 
 
-    		<!--  scope-section start  -->
+<!--  scope-section start  -->
         <section id="scope" class="bg-[#ffffff] text-[#1e1b4b]">
           <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -248,11 +319,11 @@
             <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
           </div>
         </section>
-    
+<!--  scope-section End  -->    
 	
 
 
-      <!--COMMITTEE-section start  -->
+<!--COMMITTEE-section start  -->
       <section id="committee" class="py-1 bg-white text-[#1e1b4b]">
         <div class="container mx-auto px-4">
           <div class="container mx-auto">
@@ -280,7 +351,7 @@
               <!-- Speaker 1 -->
               <div class="text-center">
                 <div class="relative mb-4 group overflow-hidden rounded-lg">
-                  <img src="{% static 'image/anil.jpg' %}" alt="Speaker 1" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                  <img src="{% static 'image/conf3.jpg' %}" alt="Speaker 1" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
 
                   
                   <!-- Name and Description (Hidden by Default) -->
@@ -324,9 +395,9 @@
           <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
         </div>
       </section>
-    <!--  COMMITTEE-section end  -->
+<!--  COMMITTEE-section end  -->
 
-     <!-- ========================= EDITORIAL BOARD-section start ========================= -->
+<!-- ========================= EDITORIAL BOARD-section start ========================= -->
 
      <section id="board" class="bg-[#ffffff] text-[#1e1b4b]">
       <div class="container mx-auto ">
@@ -359,7 +430,7 @@
             <div class="grid md:grid-cols-3 gap-8">
               <!-- First Card -->
               <div class="bg-[#1e1b4b] rounded-lg overflow-hidden">
-                <img src="{% static 'image/robert.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
+                <img src="{% static 'image/conf7.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
                 <div class="p-6">
                   <h3 class="text-lg text-white font-semibold mb-3">
                     Dr. Robert Williams
@@ -373,7 +444,7 @@
     
               <!-- Second Card -->
               <div class="bg-[#1e1b4b] rounded-lg overflow-hidden">
-                <img src="{% static 'image/priya.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
+                <img src="{% static 'image/conf6.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
                 <div class="p-6">
                   <h3 class="text-lg text-white font-semibold mb-3">
                     Dr. Priya Mehta
@@ -388,7 +459,7 @@
     
               <!-- Third Card -->
               <div class="bg-[#1e1b4b] rounded-lg overflow-hidden">
-                <img src="{% static 'image/kenji.jpg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
+                <img src="{% static 'image/conf5.jpeg' %}" alt="ORGANIZING COMMITTEE" class="w-full h-[600px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
                 <div class="p-6 ">
                   <h3 class="text-lg text-white font-semibold mb-3">
                     Dr. Kenji Tanaka
@@ -409,11 +480,11 @@
         </div>
       </div>
     </section>
-      <!-- ========================= EDITORIAL BOARD-section end ========================= -->
+<!-- ========================= EDITORIAL BOARD-section end ========================= -->
 
 
-       <!-- ========================= Registration-section start ========================= -->
-       <section id="registration" class="bg-[#ffffff]">
+<!-- ========================= Registration-section start ========================= -->
+      <section id="registration" class="bg-[#ffffff]">
         <div class="container mx-auto px-4">
           <!-- Registration Information -->
           <div class="text-center mb-8">
@@ -532,11 +603,11 @@
           </div>
         </div>
       </section> 
-    <!-- ========================= Registration-section end ========================= -->
+<!-- ========================= Registration-section end ========================= -->
 
 
     
-    <!-- ========================= CONFERENCE TRACKS-section start ========================= -->
+<!-- ========================= CONFERENCE TRACKS-section start ========================= -->
     <section id="tracks" class="bg-[#ffffff] container mx-auto px-4">
       <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -595,7 +666,7 @@
         <div class="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
       </div>
     </section>
-    
+<!-- ========================= CONFERENCE TRACKS-section End ========================= -->   
 
 <!-- Key Dates Section -->
 <section id="key" class="bg-white flex items-center">
@@ -712,9 +783,9 @@
     </div>
   </div>
 </section>
-    
+<!-- Key Dates Section End-->   
   
-    <!-- ========================= CONFERENCE TRACKS-section end ========================= -->
+
 
 
           <!-- ========================= Journals-section start ========================= -->
@@ -823,129 +894,14 @@
     </section> {% endcomment %}
          <!-- ========================= Journals-section end ========================= -->
 
-
-  {% comment %} <section id="key">
-      <div class="min-h-screen bg-[#ffffff] container max-w-7xl mx-auto px-4 py-1">
-        <!-- Hero Section with Background -->
-        <div class="text-center mb-1 mt-1">
-          <h1 class="text-4xl font-bold text-[#1e1b4b] mb-4">Key Dates</h1>
-          <br>
-          <p class="text-[#1e1b4b] text-justify text-base sm:text-2xl font-sans p-3 sm:leading-10">
-            <span class="font-semibold">Key Dates</span> for the <strong>International Conference on Advances in Big Data, Cloud, and Intelligent Computing (ICABCIC)</strong> are critical deadlines and milestones that participants must adhere to. 
-            These include the <strong class="font-semibold">paper submission deadline</strong>, <strong class="font-semibold">notification of acceptance</strong>, <strong class="font-semibold">registration deadline</strong>, and the <strong class="font-semibold">conference dates</strong>.
-            Staying informed about these dates ensures a smooth and organized participation process.
-          </p>
-        </div>
-
-        <!-- Key Dates Content -->
-        <div class="max-w-7xl mx-auto px-4 py-1">
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <!-- Paper Submission Deadline -->
-            <div class="group relative bg-[#1e1b4b] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-blue-400">Paper Submission Deadline</h3>
-              <p class="text-gray-300 text-lg">October 15, 2023</p>
-              <p class="text-gray-300 mt-2">Submit your research papers and abstracts by this date.</p>
-            </div>
-
-            <!-- Notification of Acceptance -->
-            <div class="group relative bg-[#1e1b4b] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-purple-400">Notification of Acceptance</h3>
-              <p class="text-gray-300 text-lg">November 1, 2023</p>
-              <p class="text-gray-300 mt-2">Authors will be notified about the acceptance of their submissions.</p>
-            </div>
-
-            <!-- Registration Deadline -->
-            <div class="group relative bg-[#1e1b4b] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-pink-400">Registration Deadline</h3>
-              <p class="text-gray-300 text-lg">November 15, 2023</p>
-              <p class="text-gray-300 mt-2">Complete your registration to secure your participation.</p>
-            </div>
-
-            <!-- Conference Dates -->
-            <div class="group relative bg-[#1e1b4b] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-rose-400">Conference Dates</h3>
-              <p class="text-gray-300 text-lg">December 10-12, 2023</p>
-              <p class="text-gray-300 mt-2">Join us for three days of insightful sessions and networking.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Schedule Content -->
-        <div class="space-y-8">
-          <!-- Day 1 Sessions -->
-          <div class="space-y-4">
-            <div class="group relative bg-[#2a2d43] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div class="flex-shrink-0">
-                  <img src="{% static 'image/speaker1.jpg' %}" alt="Dr. Jane Doe" class="rounded-full w-20 h-20" />
-                </div>
-                <div class="flex-grow">
-                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Keynote: Future of Big Data</h3>
-                  <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-6 text-gray-300">
-                    <span class="font-medium">Dr. Jane Doe</span>
-                    <span class="text-sm">09:00 AM - 10:00 AM</span>
-                  </div>
-                  <p class="text-gray-300">
-                    Explore the latest trends and future directions in big data analytics and its impact on industries.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 2 Sessions -->
-          <div class="space-y-4">
-            <div class="group relative bg-[#2a2d43] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div class="flex-shrink-0">
-                  <img src="{% static 'image/speaker2.jpg' %}" alt="Dr. John Smith" class="rounded-full w-20 h-20" />
-                </div>
-                <div class="flex-grow">
-                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">Cloud Computing Innovations</h3>
-                  <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-3 text-gray-300">
-                    <span class="font-medium">Dr. John Smith</span>
-                    <span class="text-sm">10:30 AM - 12:00 PM</span>
-                  </div>
-                  <p class="text-gray-300">
-                    Discover cutting-edge advancements in cloud infrastructure and services.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 3 Sessions -->
-          <div class="space-y-4">
-            <div class="group relative bg-[#2a2d43] rounded-xl p-6 shadow-lg transition duration-300 hover:scale-105">
-              <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div class="flex-shrink-0">
-                  <img src="{% static 'image/speaker3.jpg' %}" alt="Dr. Emily Brown" class="rounded-full w-20 h-20" />
-                </div>
-                <div class="flex-grow">
-                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white">AI and Intelligent Systems</h3>
-                  <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-3 text-gray-300">
-                    <span class="font-medium">Dr. Emily Brown</span>
-                    <span class="text-sm">01:00 PM - 02:30 PM</span>
-                  </div>
-                  <p class="text-gray-300">
-                    Learn about the latest breakthroughs in AI, machine learning, and cognitive computing.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-</section> {% endcomment %}
-
    
 
-        <!-- Submit Your Paper Button -->
-        <div class="flex justify-center  mt-16 mb-16">
-          <a href="{% url 'paper' %}" class="px-10 py-5 bg-gradient-to-r text-2xl from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-              Submit Your Paper
-          </a>
-        </div>
+<!-- Submit Your Paper Button -->
+<div class="flex justify-center  mt-16 mb-16">
+  <a href="{% url 'paper' %}" class="px-10 py-5 bg-gradient-to-r text-2xl from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+      Submit Your Paper
+  </a>
+</div>
 
       
 		
@@ -963,11 +919,7 @@
     });
     </script>
     <!-- ========================= scroll-top ========================= -->
-    {% comment %} <a href="#" class="scroll-top btn-hover">
+    <a href="#" class="scroll-top btn-hover">
       <i class="lni lni-chevron-up"></i>
-    </a> {% endcomment %}
-    {% endblock content %}
- <!-- Left: Image with Curves -->
- <div class="relative w-full md:w-1/2">
-  <img src="{% static 'image/funny.jpg' %}" alt="Conference" class="w-full rounded-lg shadow-lg clip-wave">
-</div>
+    </a> 
+{% endblock content %}

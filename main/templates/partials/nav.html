@@ -22,7 +22,7 @@
         <!-- About Us Dropdown -->
         <div class="relative">
           <button @click="openDropdown = openDropdown === 'about' ? '' : 'about'" :class="['flex items-center', active.startsWith('about') ? 'text-yellow-400' : 'text-white']">
-            About Us <span x-show="openDropdown !== 'about'" class="ml-2">▼</span><span x-show="openDropdown === 'about'" class="ml-2">▲</span>
+            About Us <span x-show="openDropdown !== 'about'" class="ml-2"><i class="fa-solid fa-angle-down"></i></span><span x-show="openDropdown === 'about'" class="ml-2"><i class="fa-solid fa-angle-up"></i></span>
           </button>
           <div x-show="openDropdown === 'about'" @click.away="openDropdown = ''" class="absolute bg-[#1e1b4b] mt-3 w-[225px] rounded-lg shadow-lg p-3" x-cloak>
             <a href="{% url 'home' %}#about" @click="active = 'about'; openDropdown = ''" :class="active === 'about' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">About the Conference</a>
@@ -35,7 +35,7 @@
         <!-- Author's Desk Dropdown -->
         <div class="relative">
           <button @click="openDropdown = openDropdown === 'authors' ? '' : 'authors'" :class="['flex items-center', active.startsWith('authors') ? 'text-yellow-400' : 'text-white']">
-            Author's Desk <span x-show="openDropdown !== 'authors'" class="ml-2">▼</span><span x-show="openDropdown === 'authors'" class="ml-2">▲</span>
+            Author's Desk <span x-show="openDropdown !== 'authors'" class="ml-2"><i class="fa-solid fa-angle-down"></i></span><span x-show="openDropdown === 'authors'" class="ml-2"><i class="fa-solid fa-angle-up"></i></span>
           </button>
           <div x-show="openDropdown === 'authors'" @click.away="openDropdown = ''" class="absolute bg-[#1e1b4b] mt-2 w-[210px] rounded-lg shadow-lg p-4" x-cloak>
             <a href="{% url 'home' %}#registration" @click="active = 'authors-registration'; openDropdown = ''" :class="active === 'authors-registration' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Registration Details</a>
@@ -71,7 +71,7 @@
           <!-- About Us Dropdown -->
           <div>
             <button @click="openDropdown = openDropdown === 'about' ? '' : 'about'" class="w-full text-left py-2 hover:text-yellow-400 transition-colors duration-300" :class="active.startsWith('about') ? 'text-yellow-400' : 'text-white'">
-              About Us <span x-show="openDropdown !== 'about'">▼</span><span x-show="openDropdown === 'about'">▲</span>
+              About Us <span x-show="openDropdown !== 'about'"><i class="fa-solid fa-angle-down"></i></span><span x-show="openDropdown === 'about'"><i class="fa-solid fa-angle-up"></i></span>
             </button>
             <div x-show="openDropdown === 'about'" class="pl-4" x-cloak>
               <a href="{% url 'home' %}#about" @click="active = 'about'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'about' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">About the Conference</a>
@@ -84,7 +84,7 @@
           <!-- Author's Desk Dropdown -->
           <div>
             <button @click="openDropdown = openDropdown === 'authors' ? '' : 'authors'" class="w-full hover:text-yellow-400 transition-colors duration-300 text-left py-2" :class="active.startsWith('authors') ? 'text-yellow-400' : 'text-white'">
-              Author's Desk <span x-show="openDropdown !== 'authors'">▼</span><span x-show="openDropdown === 'authors'">▲</span>
+              Author's Desk <span x-show="openDropdown !== 'authors'"><i class="fa-solid fa-angle-down"></i></span><span x-show="openDropdown === 'authors'"><i class="fa-solid fa-angle-up"></i></span>
             </button>
             <div x-show="openDropdown === 'authors'" class="pl-4" x-cloak>
               <a href="{% url 'home' %}#registration" @click="active = 'authors-registration'; openDropdown = ''; mobileMenuOpen = false" :class="active === 'authors-registration' ? 'text-yellow-400' : 'text-white'" class="block py-1 hover:text-yellow-400 transition-colors duration-300">Registration Details</a>
